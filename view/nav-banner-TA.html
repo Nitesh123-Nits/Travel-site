@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<!-- font-awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+	<!-- Aos ....................... -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" integrity="sha512-1cK78a1o+ht2JcaW6g8OXYwqpev9+6GqOkz9xmBN9iUUhIndKtxwILGWYOSibOKjLsEdjyjZvYDq/cZwNeak0w==" crossorigin="anonymous" />
+	<!-- Icon at title bar........ -->
+	<link rel="icon" href="../public/images/logo.png" type="image/x-icon">
+	<!-- Font-style........... -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Press+Start+2P&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+	<!--...........*********............................-->
+
+	<link rel="stylesheet" href="../public/css/lightbox.min.css">
+	<script src="../public/js/lightbox-plus-jquery.min.js"></script>
+		<!-- Custom css................................ -->
+	<link rel="stylesheet" href="../public/css/trav.css"> </head>
+
+<body>
+	<!-- for banner-section navigation -->
+	<header class="banner" id="home">
+		<div class="loader-div" id="fadeit">
+		  <div class="loader"> 
+             <span></span>
+             <span></span>
+             <span></span>
+             <span></span>
+             <span></span>
+             <span></span>
+             <span></span>
+             <span></span>
+             <span></span>
+             <span></span>
+           </div>
+		 </div>
+		<div class="banner-bg"><img src="../public/images/banner.jpg" alt="banner-for-site"></div>
+		<nav class="nav-bar">
+			<div><img src="../public/images/logo-v.svg" alt="" class="logo"></div>
+			<!-- clock -->
+			<div onload="showTime()">
+				<p class="clock" id="MyClockDisplay"></p>
+			</div>
+			<ul>
+				<li><a href="#home"><i class="fas fa-home"></i> Home</a> </li>
+				<li><a href="#contact"><i class="fas fa-blender-phone"></i> Contact</a></li>
+				<li><a href="#log-in-form"><i class="fas fa-sign-in-alt"></i> Log-in</a></li>
+				<li><a href="index.html" class="signup">Sign-up</a></li>
+			</ul>
+			<!-- ham-burger for mobile-version -->
+			<div class="ham-burger"> <span></span> <span></span> <span></span> </div>
+		</nav>
+		<h1>Discover The Beauty <span>Of India</span></h1> <a href="#card-sec" class="start-tour-btn">Start Tour <span><i class="fas fa-arrow-circle-down"></i></span> </a>
+		<nav class="nav-bar-mobile">
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#contact">Contact</a></li>
+				<li><a href="#log-in-form">Log-in</a></li>
+				<li><a href="index.html">Sign-up</a></li>
+			</ul> <span>X</span> </nav>
+	</header>
+	<!--................. toggler button............... -->
+	<button class="dark-mode-toggle"><img src="../public/images/night-mode.png" alt=""></button>
+	<!-- ..............section containing info................. -->
+	<main>
+	<section class="info-sec">
+		<div class="info-container"> <img data-aos="fade-right" data-aos-duration="1200" src="../public/images/vacation.svg" alt="">
+			<div>
+				<h1 data-aos="fade-in" data-aos-duration="1000">The Beauty Of Our India</h1>
+				<p class="info-text" data-aos="fade-in" data-aos-duration="1600">One of the oldest civilisations in the world, India is a mosaic of multicultural experiences. With a rich heritage and myriad attractions, the country is among the most popular tourist destinations in the world. It covers an area of 32, 87,263 sq. km, extending from the snow-covered Himalayan heights to the tropical rain forests of the south. As the 7th largest country in the world, India stands apart from the rest of Asia, marked off as it is by mountains and the sea, which give the country a distinct geographical entity. Fringed by the Great Himalayas in the north, it stretches southwards and at the Tropic of Cancer, tapers off into the Indian Ocean between the Bay of Bengal on the east and the Arabian Sea on the west.
+					<br>
+					<br> As you travel the expanse of the country, you are greeted by diverse nuances of cuisines, faiths, arts, crafts, music, nature, lands, tribes, history and adventure sports. India has a mesmeric conflation of the old and the new. As the bustling old bazaars rub shoulders with swanky shopping malls, and majestic monuments accompany luxurious heritage hotels, the quintessential traveller can get the best of both worlds. Head to the mountains, enjoy a beach retreat or cruise through the golden Thar, India has options galore for all. </p>
+			</div>
+		</div>
+	</section>
+	<!-- ........................................ -->
+	<!-- card section............................. -->
+	<section class="card-sec" id="card-sec">
+		<div class="main">
+			<h1 data-aos="flip-left" data-aos-duration="1000">Popular States In India</h1>
+			<ul class="cards">
+				<li class="cards_item" data-aos="fade-right" data-aos-duration="1000">
+					<div class="card">
+						<div class="card_image">
+							<a href="../public/images/sikkim.jpg" data-lightbox="mygallery" data-title="Sikkim"><img src="../public/images/sikkim.jpg"></a>
+						</div>
+						<div class="card_content">
+							<h2 class="card_title">Sikkim</h2>
+							<p class="card_text">Sikkim is one of the most enchanting and a sacred place to visit in India, despite the truth that it is not very easily accessible from the major cities of the country. Apart from heritage sites and monasteries, there is an extremely rich biodiversity here. This small Indian state is blessed with mind-boggling array of exotic flora and fauna. The hills and valleys abound with numerous orchids, Primula, marigolds, rhododendrons, and cherries. </p> <a class="btn card_btn">Visit</a> </div>
+					</div>
+				</li>
+				<li class="cards_item" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
+					<div class="card">
+						<div class="card_image">
+							<a href="../public/images/andra.jpg" data-lightbox="mygallery" data-title="Andhra Pradesh"><img src="../public/images/andra.jpg"></a>
+						</div>
+						<div class="card_content">
+							<h2 class="card_title">Andra Pradesh</h2>
+							<p class="card_text">Andhra Pradesh, the fifth largest state of India is spread over an area of 275,068 sq. km.Andhra Pradesh India is known for its glorious past. The ancient temples, monuments, forts, palaces, old markets are the testimony to its rich history, culture and architecture.Andhra Pradesh is also a home to many famous hill stations, wild life sanctuaries, national parks.</p> <a class="btn card_btn">Visit</a> </div>
+					</div>
+				</li>
+				<li class="cards_item" data-aos="fade-left" data-aos-duration="1000">
+					<div class="card">
+						<div class="card_image">
+							<a href="../public/images/jammu.jpg" data-lightbox="mygallery" data-title="Jammu Kashmir"><img src="../public/images/jammu.jpg"></a>
+						</div>
+						<div class="card_content">
+							<h2 class="card_title">Jammu & Kashmir</h2>
+							<p class="card_text">Known as Heaven on the Earth, Jammu & Kashmir is where Mother Nature has bestowed all her love. Enclosed by the Himalayas and Karakoram ranges; and festooned with verdant meadows, lush valleys, dense forests, temples, this new union territory of India is a holiday destination to instantly fall in love with. Jammu & Kashmir offers abundance tour options for travellers of all kind.</p> <a class="btn card_btn">Visit</a> </div>
+					</div>
+				</li>
+				<li class="cards_item" data-aos="fade-right" data-aos-duration="1000">
+					<div class="card">
+						<div class="card_image">
+							<a href="../public/images/arunachal.jpg" data-lightbox="mygallery" data-title="Arunachal"><img src="../public/images/arunachal.jpg"></a>
+						</div>
+						<div class="card_content">
+							<h2 class="card_title">Arunachal Pradesh</h2>
+							<p class="card_text">For an amazing holiday, you need to go to an amazing destination. So if you are seeking to step into a world of extraordinary beauty and discover experiences found nowhere else on earth, Arunachal Pradesh is the place for you.Get ready to experience that which you havent experienced till now. Dive into the sea of natural beauty and climb the hills of the adventures and witness the sunset of the joy,only here at Arunachal Pradesh</p> <a class="btn card_btn">Visit</a> </div>
+					</div>
+				</li>
+				<li class="cards_item" data-aos="fade-up" data-aos-duration="1000">
+					<div class="card">
+						<div class="card_image">
+							<a href="../public/images/kerala.jpg" data-lightbox="mygallery" data-title="Kerala"><img src="../public/images/kerala.jpg"></a>
+						</div>
+						<div class="card_content">
+							<h2 class="card_title">Kerala</h2>
+							<p class="card_text">Popularly known as "God's Own Country", Kerala is one of the most sought after tourist destinations in the world. This exotic land is renowned for its rich cultural heritage, tropical climate, palm fringed beaches, misty hill stations, health resorts, wild life sanctuaries, enchanting art forms, grand festivals and, the serenity of the backwaters and the emerald blue Arabian Sea which promise an unforgettable holidaying experience to travellers. </p> <a class="btn card_btn">Visit</a> </div>
+					</div>
+				</li>
+				<li class="cards_item" data-aos="fade-left" data-aos-duration="1000">
+					<div class="card">
+						<div class="card_image">
+							<a href="../public/images/raj.jpg" data-lightbox="mygallery" data-title="Rajasthan"><img src="../public/images/raj.jpg"></a>
+						</div>
+						<div class="card_content">
+							<h2 class="card_title">Rajasthan</h2>
+							<p class="card_text">Recognized as the "Land of Kings" and having sheer variety of experiences to offer, Rajasthan is the largest state of India located on the northwestern side and is one of India's most popular tourist destinations. Steeped in tales of chivalry and romance, also famous for striking desert landscape, massive forts,lakes and fabulous palaces, Rajasthan represents the quintessential India. Also, the crafts and folk arts originated here are world famous. </p> <a class="btn card_btn">Visit</a> </div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</section>
+	<!--.................... Log-in Form ........................... -->
+	<section class="log-in" id="log-in-form">
+		<h2>Log-in-form</h2>
+		<div class="flex">
+			<div class="login-text">
+				<p data-aos="fade-in" data-aos-duration="1000">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo qui temporibus molestiae veniam quaerat! Iusto sed, vero beatae omnis ea optio,Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis beatae alias dolores. ipsum dolor, sit.</p>
+			</div>
+			<div id="loginformcontainer" data-aos="fade-in" data-aos-duration="1100">
+				<form action="">
+					<label for="loginUsername">Username</label>
+					<br>
+					<input type="text" class="loginUsername" name="loginUsername" placeholder="Username" required>
+					<ul id="msg"> </ul>
+					<br>
+					<label for="loginPassword">Password</label>
+					<br>
+					<input type="password" name="loginPassword" class="loginPassword" placeholder="Password" required>
+					<br>
+					<button id="loginButton">Log In</button>
+					<br>
+					<hr width="80%" color="#0f0"> </form>
+				<p class="no-acount-text">Dont Have An Account?</p>
+				<br>
+				<br>
+				<button id="loginSignupbutton">Sign Up</button>
+			</div>
+		</div>
+	</section>
+	<!-- ......********.......................... -->
+	<!-- contact-----section -->
+	<section class="contact-container" id="contact">
+		<div class="cont-img"> <img data-aos="fade-in" data-aos-duration="1000" src="../public/images/interface-call-book.svg" alt=""> </div>
+		<div class="contact-sec" data-aos="fade-in" data-aos-duration="1100">
+			<h2 data-aos="fade-in" data-aos-duration="800">Contact Us</h2>
+			<div class="contact-body" data-aos="fade-up" data-aos-duration="800">
+				<div>
+					<h3><i class="fas fa-phone-square"></i><span>9876543235</span></h3>
+					<h3><i class="far fa-envelope"></i><span>trave-help@gmail.com</span></h3>
+					<h3><i class="fab fa-twitter-square"></i><span>trave-help.twitter.com</span></h3>
+					<h3><i class="fab fa-instagram-square"></i><span>trave-help.instagram.com</span></h3>
+					<h3><i class="fab fa-facebook-square"></i><span>facebook.com/trave-help</span></h3> </div>
+			</div> <img data-aos="fade-in" data-aos-duration="1000" class="star" src="../public/images/Group 5.png" alt=""> <img data-aos="fade-in-right" data-aos-duration="1000" class="star2" src="../public/images/Group 5.png" alt=""> </div>
+	</section>
+    </main>
+	<!-- .................................................. -->
+	<!-- footer  section.................................. -->
+	<footer class="footer">
+		<h1 class="footer-h1" data-aos="flip-up" data-aos-duration="1100" data-aos-easing="ease-out-cubic">Get In Touch</h1>
+		<p class="footer-p" data-aos="fade-in" data-aos-duration="1000">Subscribe our e-mail for any latest news and updates!</p>
+		<form>
+			<div data-aos="fade-in" data-aos-duration="1000" data-aos-anchor-placement="bottom-bottom">
+				<input type="email" class="footer-input" placeholder="Enter your mail">
+				<input type="submit" name="submit" value="Subscribe"> </div>
+		</form>
+		<p class="copyright-text">@Copyright 2012 Trav-help.</p>
+		<div class="shape-1 shape" data-aos="zoom-in-left" data-aos-duration="1000"></div>
+		<div class="shape-2 shape" data-aos="zoom-in-up" data-aos-duration="1200"></div>
+	</footer>
+	<!--....................................................  -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js" integrity="sha512-A7AYk1fGKX6S2SsHywmPkrnzTZHrgiVT7GcQkLGDe2ev0aWb8zejytzS8wjo7PGEXKqJOrjQ4oORtnimIRZBtw==" crossorigin="anonymous"></script>
+	<script src="../public/js/main.js"></script>
+</body>
+
+</html>

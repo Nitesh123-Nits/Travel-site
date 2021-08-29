@@ -1,0 +1,702 @@
+html {
+  overflow-x: hidden;
+}
+body {
+  box-sizing: border-box;
+  letter-spacing: 1px;
+  background-color: #111;
+  margin: 0;
+  padding: 0;
+}
+.loader-div {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 58;
+  pointer-events: none;
+  transition: all .8s ease-in;
+}
+.loader {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, transparent, transparent 40%, deeppink);
+  box-shadow: 0 0 20px deeppink;
+  0 0 30px deeppink;
+  animation: animate1 2s linear infinite
+}
+@keyframes animate1 {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+.loader span:nth-child(1) {
+  content: ' ';
+  position: absolute;
+  top: 10px;
+  bottom: 10px;
+  left: 10px;
+  right: 10px;
+  background: black;
+  border-radius: 50%
+}
+.loader span:nth-child(2) {
+  content: ' ';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+  background: linear-gradient(180deg, transparent, transparent 30%, yellow);
+  box-shadow: 0 0 10px yellow;
+  0 0 10px yellow;
+  border-radius: 50%;
+  animation: animate2 1.75s linear infinite
+}
+.loader span:nth-child(3) {
+  content: ' ';
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
+  background: black;
+  border-radius: 50%
+}
+.loader span:nth-child(4) {
+  content: ' ';
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  bottom: 40px;
+  background: linear-gradient(270deg, transparent, transparent 30%, #f664e2);
+  box-shadow: 0 0 5px #f664e2, 0 0 5px #f664e2;
+  border-radius: 50%;
+  animation: animate3 1.5s linear infinite
+}
+.loader span:nth-child(5) {
+  content: ' ';
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  right: 50px;
+  bottom: 50px;
+  background: black;
+  border-radius: 50%
+}
+.loader span:nth-child(6) {
+  content: ' ';
+  position: absolute;
+  top: 60px;
+  left: 60px;
+  right: 60px;
+  bottom: 60px;
+  background: linear-gradient(270deg, transparent, transparent 30%, #f8246d);
+  box-shadow: 0 0 2px #f8246d, 0 0 3px #f8246d;
+  border-radius: 50%;
+  animation: animate4 1.25s linear infinite
+}
+.loader span:nth-child(7) {
+  content: ' ';
+  position: absolute;
+  top: 70px;
+  left: 70px;
+  right: 70px;
+  bottom: 70px;
+  background: black;
+  border-radius: 50%
+}
+.loader span:nth-child(8) {
+  content: ' ';
+  position: absolute;
+  top: 80px;
+  left: 80px;
+  right: 80px;
+  bottom: 80px;
+  background: linear-gradient(270deg, transparent, transparent 30%, #d3fdf3);
+  box-shadow: 0 0 1px #d3fdf3;
+  border-radius: 50%;
+  animation: animate5 1s linear infinite
+}
+.loader span:nth-child(9) {
+  content: ' ';
+  position: absolute;
+  top: 90px;
+  left: 90px;
+  right: 90px;
+  bottom: 90px;
+  background: black;
+  border-radius: 50%
+}
+@keyframes animate2 {
+  0% {
+    transform: rotate(360deg)
+  }
+  100% {
+    transform: rotate(0deg)
+  }
+}
+@keyframes animate3 {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+@keyframes animate4 {
+  0% {
+    transform: rotate(360deg)
+  }
+  100% {
+    transform: rotate(0deg)
+  }
+}
+/* main container */
+
+#signUpContainer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: auto;
+}
+.nav-bar {
+  width: 100%;
+  height: 80px;
+  background: #222;
+  position: fixed;
+  top: 0;
+  box-shadow: 2px 2px 4px #333;
+}
+.logo {} .nav-bar ul {
+  display: flex;
+  justify-content: space-between;
+  color: #ffe;
+}
+.nav-bar ul li {
+  margin-right: 2rem;
+  line-height: 60px;
+  font-size: 1rem;
+  font-weight: 700;
+}
+a {
+  text-decoration: none;
+  color: #ffe;
+}
+input {
+  padding: 1rem;
+}
+select {
+  padding-left: 10px;
+}
+label {
+  display: block;
+  padding: 0.5rem;
+}
+img {
+  transition: all .4s ease-in;
+}
+img:hover {
+  transform: scale(1.04);
+}
+/* form */
+
+#signUpForm {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-size: 20px;
+  height: min-content;
+  max-height: auto;
+  width: 500px;
+  color: #ffd200;
+  border-radius: 1.2rem;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #222222;
+}
+/* changing style of input field */
+
+main input,
+#gender {
+  width: 350px;
+  height: 30px;
+  border-radius: 20px;
+  border-color: grey;
+  border: none;
+  background-color: #343a40;
+  outline: 0px;
+  color: #0f0;
+}
+/* checkbox size */
+
+#agree {
+  width: 25px;
+  height: 25px;
+}
+/* sign up button style */
+
+#submit {
+  font-size: 1.3rem;
+  background-color: rgb(35, 52, 211);
+  color: white;
+  border-radius: 10px;
+  outline: 0px;
+  border: 0px;
+  padding: 0.5rem 1.8rem 0.5rem 1.8rem;
+}
+#submit:hover {
+  background-color: green;
+  box-shadow: 0px 0px 2px 0px black;
+  transition: background-color 0.5s;
+}
+/* side container */
+
+aside {
+  width: 40%;
+}
+/* text in side container styles */
+
+#div {
+  margin-left: 50px;
+  margin-right: 50px;
+  transition: margin-left 0.8s;
+}
+#text {
+  font-size: 20px;
+  color: white;
+  font-style: bold;
+}
+/* that 3 scenary img part */
+
+aside #img {
+  width: 160px;
+  height: 150px;
+}
+#img {
+  margin-left: 100px;
+  margin-right: 100px;
+  padding: 20px 20px;
+  transition: margin-left 0.8s;
+  border-radius: 200px;
+}
+/* fb twitter gmail image style */
+
+#alt {
+  width: 70px;
+  height: 70px;
+  border-radius: 200px;
+  margin-left: 40px;
+  margin-right: 40px;
+  transition: margin-left 0.8s, margin-right 0.8s;
+}
+/* div of fb twitter gmail image  */
+
+#altdiv {
+  display: flex;
+  justify-content: space-evenly;
+}
+#discover {
+  background-color: rgba(28, 28, 230, 0.363);
+  font-size: 25px;
+}
+/* upto here */
+
+#signuptext {
+  text-align: center;
+  color: #ff652f;
+}
+#signuptext h1 {
+  padding-top: 6rem;
+}
+/* For button in phone mode */
+
+#facebook {
+  color: white;
+  background-color: #3b5998;
+  font-size: 20px;
+}
+#facebook:hover {
+  background-color: #3b5998;
+  box-shadow: 0px 0px 2px 0px black;
+  transition: background-color 0.5s;
+}
+#gmail {
+  width: 115px;
+  background-color: #DA4336;
+  color: white;
+  font-size: 20px;
+  height: 35px;
+}
+#gmail:hover {} #twitter:hover {} #twitter {
+  width: 115px;
+  font-size: 20px;
+  height: 35px;
+  background-color: #2CAAFF;
+  color: white;
+}
+/* disabling these buttons in laptop mode */
+
+#mediaalt {
+  display: none;
+}
+/* upto here */
+
+/* for red border in input */
+
+.error {
+  border: red solid 3px;
+}
+/* error msg printing style */
+
+#error {
+  color: red;
+  text-align: left;
+  font-size: 15px;
+}
+#error2 {
+  color: red;
+  text-align: left;
+  font-size: 15px;
+}
+#error3 {
+  color: red;
+  text-align: left;
+  font-size: 15px;
+}
+#error4 {
+  color: red;
+  text-align: left;
+  font-size: 15px;
+}
+#error5 {
+  color: red;
+  text-align: left;
+  font-size: 15px;
+}
+button {
+  margin-bottom: 1rem;
+  border: 0;
+  outline: none;
+  border-radius: .3rem;
+  transition: all .2s ease-in;
+}
+button:hover {
+  transform: scale(1.05);
+}
+/* upto here */
+
+/* disabling buttons for error */
+
+.buttonoff {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.buttonoff2 {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.buttonoff3 {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.buttonoff4 {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.buttonoff5 {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+/* upto here */
+
+/* philosophy of travelling div  */
+
+#cards {
+  width: 200px;
+  height: 200px;
+  margin-bottom: 10px;
+  margin-left: 150px;
+  color: #1f1135;
+  transition: margin-left 0.9s, color 5s;
+  background-color: #e2daeb;
+  box-shadow: 0 40px 80px 0 rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  border-radius: .3rem;
+}
+#philosophy {
+  text-align: left;
+  margin-left: 120px;
+  font-size: 1.7rem;
+  color: white;
+  transition: margin-left 1s, font-size 0.5s;
+}
+/* upto here */
+
+/* media query */
+
+@media (min-width: 1151px) and (max-width: 1300px) {
+  #signUpForm {
+    width: 460px;
+  }
+  main input,
+  #gender {
+    width: 90%;
+  }
+  button {
+    outline: none;
+    border: 0;
+  }
+  #cards {
+    margin-left: 100px;
+    transition: margin-left 0.9s;
+  }
+  #philosophy {
+    text-align: left;
+    margin-left: 70px;
+    font-size: 30px;
+    transition: margin-left 1s, font-size 0.5s;
+  }
+}
+select {
+  transition: all .3s ease-in
+}
+select option {
+  transition: all .3s ease-in;
+  font-size: 1rem;
+  border-bottom: 1px solid #222;
+  color: #ff0;
+  background: #111;
+}
+/*foter section.....................................*/
+
+.footer {
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  padding: 3rem 0 3rem 0;
+  margin-top: 1rem;
+  background-color: #222;
+  position: relative;
+  box-shadow: 2px 0px 2px 0px #444444;
+}
+.footer h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #ffe;
+  text-shadow: 3px 2px #ff00ff;
+  font-family: 'Fredericka the Great', cursive;
+  position: relative;
+}
+.footer p {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #efe;
+}
+.footer form div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1a1c1c;
+  box-shadow: inset 7px 7px 7px #111212, inset -7px -7px 7px #333633;
+  margin-bottom: 1rem;
+  margin: auto;
+  width: 60%;
+  position: relative;
+  height: 4rem;
+  border-radius: 5rem;
+  border: 2px solid #0f0;
+}
+.footer input[type="email"] {
+  outline: none;
+  border: 0;
+  background: transparent;
+  display: block;
+  width: 80%;
+  color: #ffe;
+  position: absolute;
+  font-weight: 500;
+  left: 1rem;
+  font-size: 1.2rem;
+}
+.footer input[type="submit"] {
+  border: 0;
+  padding: 1.2rem;
+  color: #ffe;
+  border-radius: 4rem;
+  background: #eb5e0b;
+  position: absolute;
+  right: .3rem;
+  font-weight: 700;
+  outline: none;
+}
+.footer input[type="submit"]:hover {
+  background-color: #130f40;
+  background-image: linear-gradient(315deg, #130f40 0%, #000000 74%);
+  border: 2px solid #eb5e0b;
+}
+.footer .copyright-text {
+  color: #666666;
+  font-size: .8rem;
+  text-align: center;
+}
+@keyframes aa {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@media (min-width: 981px) and (max-width: 1150px) {
+  #signUpForm {
+    width: 460px;
+  }
+  main input,
+  #gender {
+    width: 90%;
+  }
+  #div {
+    margin: 0px 0px 0px 0px;
+  }
+  #img {
+    margin: 0px 0px 0px 0px;
+  }
+  #signuptext {
+    transform: translateX(-90px);
+  }
+  #cards {
+    margin-left: 70px;
+    transition: margin-left 0.9s;
+  }
+  #philosophy {
+    text-align: left;
+    margin-left: 50px;
+    font-size: 30px;
+    transition: margin-left 1s, font-size 0.5s;
+  }
+}
+@media (min-width: 801px) and (max-width: 980px) {
+  #signUpForm {
+    width: 460px;
+  }
+  main input,
+  #gender {
+    width: 90%;
+  }
+  #altdiv {
+    display: block;
+  }
+  #alt {
+    margin-left: 20px;
+    transition: margin-left 1s;
+  }
+  #div {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+  #signuptext {
+    transform: translateX(90px);
+  }
+  #cardscontainer {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  aside {
+    display: none;
+  }
+  #signUpForm {
+    border-radius: 15px;
+    width: 460px;
+  }
+  #mediaalt {
+    display: unset;
+  }
+  #footeremail {
+    width: 110%;
+  }
+}
+/* upto here */
+
+li {
+  list-style: none;
+  padding-left: 1.5rem;
+}
+@media (min-width: 501px) and (max-width: 799px) {
+  #signUpForm {
+    width: 430px;
+  }
+}
+@media (max-width: 500px) {
+  #signUpForm {
+    width: 340px;
+  }
+  main input,
+  #gender {
+    width: 90%;
+  }
+  #signuptext h1 {
+    font-size: 2rem;
+  }
+}
+/*..............................*/
+
+@media (max-width: 1000px) {
+  .footer input[type="email"] {
+    width: 67%;
+  }
+}
+@media (max-width: 800px) {
+  .footer input[type="submit"] {
+    padding: .9rem;
+  }
+  .footer input[type="email"] {
+    font-size: .9rem;
+    width: 65%;
+  }
+  .footer form div {
+    width: 60%;
+    height: 3.1rem;
+  }
+  .footer p {
+    font-size: .85rem;
+  }
+  .footer h1 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+}
+/*...........................Advanced version media queries..................*/
+
+@media (max-width: 700px) {
+  .footer input[type="submit"] {
+    padding: .7rem;
+  }
+  .footer form div {
+    width: 65%;
+  }
+}
+@media (max-width: 500px) {
+  .footer form div {
+    width: 80%;
+  }
+}

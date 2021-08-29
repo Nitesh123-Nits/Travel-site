@@ -1,0 +1,960 @@
+      :root {
+        --animate-time: all .3s ease-in;
+        --btn-bg-clr2: #eb5e0b;
+      }
+      /*.................scrolbar style.............................*/
+      *::-webkit-scrollbar {
+        width: 1.2rem;
+      }
+      *::-webkit-scrollbar-track {
+        background: #234;
+        border: 2px solid #343A40;
+      }
+      *::-webkit-scrollbar-thumb {
+        background: #393838;
+        box-shadow: inset 5px 5px 4px #171616, inset -5px -5px 4px #5b5a5a;
+        border-radius: 2rem;
+      }
+      *::-webkit-scrollbar-thumb:hover {
+        border: 1px solid #0f0;
+      }
+      /*firefox*/
+      *::-moz-scrollbar {
+        width: 1.2rem;
+      }
+      *::-moz-scrollbar-track {
+        background: #234;
+        border: 2px solid #343A40;
+      }
+      *::-moz-scrollbar-thumb {
+        background: #393838;
+        box-shadow: inset 5px 5px 4px #171616, inset -5px -5px 4px #5b5a5a;
+        border-radius: 2rem;
+      }
+      *::-moz-scrollbar-thumb:hover {
+        border: 1px solid #0f0;
+      }
+      /*..............scroll-bar......................*/
+      /*pre styles.......................*/
+      html {
+        scroll-behavior: smooth;
+        overflow-x: hidden;
+      }
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: sans-serif;
+      }
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      li {
+        list-style: none;
+      }
+      a {
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: 700;
+        color: #ffe;
+        transition: var(--animate-time);
+        cursor: url('../images/clicker.png'), auto;
+      }
+      input[type="submit"],
+      .btn,
+      .nav-bar-mobile span {
+        cursor: url('../images/clicker.png'), auto;
+      }
+      p {
+        color: #ffe;
+        font-weight: 500;
+      }
+      /*.........................*/
+      body {
+        position: relative;
+        cursor: url('../images/pointer.png'), auto;
+        width: 100%;
+        background: #131312;
+        overflow-x: hidden;
+        overflow-y: hidden;
+      }
+      .loader-div {
+        position:absolute;
+        height: 100vh;
+        width: 100%;
+        top: 0;
+        left: 0;
+        background: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 58;
+        pointer-events: none;
+        transition:all .8s ease-in; 
+      }
+      .loader{position:relative;width:100px;height:100px;border-radius:50%;background:linear-gradient(90deg, transparent, transparent 40%, deeppink);box-shadow:0 0 20px deeppink;0 0 30px deeppink;animation:animate1 2s linear infinite}@keyframes animate1{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}.loader span:nth-child(1){content:' ';position:absolute;top:10px;bottom:10px;left:10px;right:10px;background:black;border-radius:50%}.loader span:nth-child(2){content:' ';position:absolute;top:20px;left:20px;right:20px;bottom:20px;background:linear-gradient(180deg, transparent, transparent 30%, yellow);box-shadow:0 0 10px yellow;0 0 10px yellow;border-radius:50%;animation:animate2 1.75s linear infinite}.loader span:nth-child(3){content:' ';position:absolute;top:30px;left:30px;right:30px;bottom:30px;background:black;border-radius:50%}.loader span:nth-child(4){content:' ';position:absolute;top:40px;left:40px;right:40px;bottom:40px;background:linear-gradient(270deg, transparent, transparent 30%, #f664e2);box-shadow:0 0 5px #f664e2, 0 0 5px #f664e2;border-radius:50%;animation:animate3 1.5s linear infinite}.loader span:nth-child(5){content:' ';position:absolute;top:50px;left:50px;right:50px;bottom:50px;background:black;border-radius:50%}.loader span:nth-child(6){content:' ';position:absolute;top:60px;left:60px;right:60px;bottom:60px;background:linear-gradient(270deg, transparent, transparent 30%, #f8246d);box-shadow:0 0 2px #f8246d, 0 0 3px #f8246d;border-radius:50%;animation:animate4 1.25s linear infinite}.loader span:nth-child(7){content:' ';position:absolute;top:70px;left:70px;right:70px;bottom:70px;background:black;border-radius:50%}.loader span:nth-child(8){content:' ';position:absolute;top:80px;left:80px;right:80px;bottom:80px;background:linear-gradient(270deg, transparent, transparent 30%, #d3fdf3);box-shadow:0 0 1px #d3fdf3;border-radius:50%;animation:animate5 1s linear infinite}.loader span:nth-child(9){content:' ';position:absolute;top:90px;left:90px;right:90px;bottom:90px;background:black;border-radius:50%}@keyframes animate2{0%{transform:rotate(360deg)}100%{transform:rotate(0deg)}}@keyframes animate3{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}@keyframes animate4{0%{transform:rotate(360deg)}100%{transform:rotate(0deg)}}
+      
+      .banner {
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        z-index: 1;
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, .3);
+        animation: fadein 2s linear;
+      }
+      @keyframes fadein {
+        0% {
+          opacity: 0;
+        }
+        20% {
+          opacity: .2;
+        }
+        40% {
+          opacity: .4;
+        }
+        60% {
+          opacity: .6;
+        }
+        80% {
+          opacity: .8;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      .banner-bg {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        filter: grayscale(100%);
+      }
+      .banner-bg img {
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+      }
+      .banner-bg:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, .12);
+        z-index: 1;
+      }
+      .logo {
+        width: 6rem;
+        height: 2rem;
+        position: absolute;
+        top: 1.7rem;
+        left: 1rem;
+        cursor: url('../images/clicker.png'), auto;
+      }
+      .banner h1 {
+        text-align: center;
+        font-size: 4.5rem;
+        padding-top: 8rem;
+        font-family: 'Fredericka the Great', cursive;
+        word-spacing: .4rem;
+        color: #ffe;
+      }
+      .banner h1 span {
+        display: block;
+        font-family: 'Fredericka the Great', cursive;
+        color: #ffe;
+      }
+      .start-tour-btn {
+        display: block;
+        margin: auto;
+        padding: .6rem;
+        width: 15rem;
+        color: #000055;
+        text-align: center;
+        margin-top: 2rem;
+        font-size: 1.3rem;
+        transition: .5s ease-in-out;
+        box-sizing: border-box;
+        background: rgba(255, 255, 255, 0.20);
+        backdrop-filter: blur(2.0px);
+        -webkit-backdrop-filter: blur(2.0px);
+        box-shadow: #0f0 0px 3.8px 0px 0px, #0f0 0px -3.8px 0px 0px, #0f0 3.8px 0px 0px 0px, #0f0 -3.8px 0px 0px 0px;
+      }
+      .start-tour-btn:hover {
+        background-color: #000000;
+        background-image: linear-gradient(315deg, #000000 0%, #b82e1f 74%);
+        color: #ffe;
+        
+      }
+      .start-tour-btn span i {
+        animation: anm 1s linear infinite;
+      }
+      @keyframes anm {
+        0% {
+          transform: translateY(0px);
+        }
+        25% {
+          transform: translateY(-5px);
+        }
+        75% {
+          transform: translateY(0px);
+          color: #0f0;
+        }
+        100% {
+          transform: translateY(5px);
+          color: #ff0;
+        }
+      }
+      /*.........................nav-bar styling..............................*/
+      .nav-bar {
+        width: 100%;
+        height: 80px;
+        position: fixed;
+        top:0;
+        left: 0;
+        background: #111;
+        box-shadow: 6px 6px 8px rgba(0, 0, 0, .22);
+        z-index: 3;
+      }
+      .nav-bar ul {
+        display: flex;
+        justify-content: flex-end;
+        gap: 1.5rem;
+        line-height: 80px;
+        margin-right: 2rem;
+      }
+      .nav-bar a {
+        padding: .6rem;
+        border-radius: .2rem;
+        font-size: 1.1rem;
+        color: #ffb96c;
+      }
+      .nav-bar a:hover {
+        color: #123;
+        background: #ffe;
+      }
+      .clock {
+        position: absolute;
+        left: 20%;
+        top: 35%;
+        font-size: 1.3rem;
+        color: #1f8888;
+        font-family: 'Russo One', sans-serif;
+        font-weight: 400;
+        text-shadow: 1px 1px #eef;
+        letter-spacing: .15rem;
+      }
+      .dark-mode-toggle {
+        position: fixed;
+        bottom: .5rem;
+        right: 1rem;
+        z-index: 5;
+        border: 0;
+        padding: .5rem;
+        color: #ffe;
+        border-radius: 3rem;
+        background: #ffe;
+        border: 2px solid red;
+        outline: 0;
+      }
+      .dark-mode-toggle:hover {
+        background-color: #69140e;
+        background-image: linear-gradient(315deg, #69140e 0%, #d58936 74%);
+      }
+      .dark {
+        background: #efe;
+      }
+      .dark-text {
+        color: #999999;
+      }
+      .dark-mode-toggle img {
+        width: 1.5rem;
+      }
+      /*...........................Hamburger styling..........................................*/
+      .ham-burger {
+        position: absolute;
+        display: none;
+        padding: .2rem;
+        z-index: 44;
+        right: 1rem;
+        top: 2rem;
+        border: 1px solid #FFD200;
+        cursor: url('../images/clicker.png'), auto;
+      }
+      .ham-burger span {
+        width: 2rem;
+        height: 4px;
+        background: #ffe;
+        display: block;
+      }
+      .ham-burger span:nth-child(1) {
+        background: #ffe;
+        margin-bottom: 4px;
+      }
+      .ham-burger span:nth-child(3) {
+        margin-top: 4px;
+        background: #ffe;
+      }
+      /*...........................mobile nav-bar.......................................*/
+      .nav-bar-mobile {
+        height: 100vh;
+        width: 100%;
+        top: -150%;
+        position: fixed;
+        z-index: 66;
+        background: rgba(0, 0, 0, .8);
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all .8s ease-in-out;
+        opacity: 0;
+      }
+      .nav-bar-mobile ul {
+        display: block;
+        gap: 3rem;
+        width: 100%;
+      }
+      .nav-bar-mobile span {
+        color: #FFD200;
+        font-size: 1.8rem;
+        border: 1px solid #ffd200;
+        position: absolute;
+        right: 2rem;
+        top: 2rem;
+        padding: .3rem;
+      }
+      .nav-bar-mobile ul a {
+        color: #0f0;
+        display: block;
+        width: 100%;
+        font-family: 'Fredericka the Great', cursive;
+        text-align: center;
+        letter-spacing: .2rem;
+        margin-bottom: 2.2rem;
+        transition: all .5 ease-in-out;
+        font-size: 1.8rem;
+      }
+      .nav-bar-mobile ul a:hover {
+        color: #eb5e0b;
+      }
+      /*........................info section...............................*/
+      .info-sec {
+        position: relative;
+        min-height: 100vh;
+        height: auto;
+        width: 100%;
+        display: grid;
+        place-item: center;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, .12);
+      }
+      .info-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .info-container img {
+        display: block;
+        width: 400px;
+      }
+      .info-sec h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin: 2.5rem auto;
+        color: #00FF99;
+        font-family: 'Fredericka the Great', cursive;
+        position: relative;
+      }
+      .info-sec p {
+        font-size: 1rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        line-height: 1.6rem;
+        margin-bottom: 1.2rem;
+        color: #999999;
+      }
+      /* .....................inf-sec-end......................*/
+      /*.........................card....................*/
+      .main {
+        margin: 0 auto;
+        height: auto;
+        padding: 1rem;
+      }
+      .card-sec img {
+        display: block;
+        max-width: 100%;
+        vertical-align: middle;
+        transition: .4s ease-in-out;
+      }
+      .card-sec img:hover {
+        transform: scale(1.05);
+      }
+      .btn {
+        color: #ffffff;
+        padding: 0.8rem;
+        font-size: .8rem;
+        text-transform: uppercase;
+        cursor: url('../images/clicker.png'), auto;
+        font-weight: 600;
+        display: block;
+        text-align: center;
+        width: 98%;
+        margin: 0 auto;
+        cursor: pointer;
+        border: 1px solid #D5CF12;
+        background-color: #130f40;
+        background-image: linear-gradient(315deg, #130f40 0%, #000000 74%);
+        box-shadow: #D5CF12 0px 3px 0px 0px, #D5CF12 0px 0px 0px 0px, #D5CF12 3px 0px 0px 0px, #D5CF12 -3px 0px 0px 0px;
+        transition: all .3s ease-in-out;
+      }
+      .btn:hover {
+        background-color: #2d3436;
+        background-image: linear-gradient(315deg, #2d3436 0%, #000000 74%);
+      }
+      .card-sec {
+        background: #080808;
+        height: auto;
+        width: 100%;
+      }
+      .card-sec h1 {
+        text-align: center;
+        font-size: 1.9rem;
+        color: #00FF99;
+        margin: 0 auto;
+        margin-bottom: 2rem;
+        font-family: 'Fredericka the Great', cursive;
+      }
+      .card_title {
+        color: #eb5e0b;
+        font-size: 1.3rem;
+      }
+      .card_text {
+        font-size: 1rem;
+        margin-bottom: .8rem;
+        color: #e4d4a1;
+      }
+      .cards {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0 auto;
+        padding: 0;
+      }
+      .card {
+        background: #16171D;
+        box-shadow: #16171D 0px 5px 0px 0px, #16171D 0px -5px 0px 0px, #16171D 5px 0px 0px 0px, #16171D -5px 0px 0px 0px;
+      }
+      .card_content {
+        padding: .5rem;
+      }
+      .cards_item {
+        display: flex;
+        padding: 1rem;
+      }
+      /*.......Card......sec-ends.........*/
+      /*contact sec*/
+      .contact-container {
+        background: #080808;
+        padding: 2rem 0rem;
+      }
+      .cont-img img {
+        display: block;
+        height: 8rem;
+        width: 8rem;
+        margin: 2rem auto;
+        border: 3px solid #00FF99;
+        background-color: #4d4855;
+        background-image: linear-gradient(147deg, #4d4855 0%, #000000 74%);
+        border-radius: 50%;
+      }
+      .contact-sec i {
+        color: #999999;
+        font-size: 2rem;
+        margin-right: 1.5rem;
+        transition: .4s ease-in;
+      }
+      .contact-sec i:hover {
+        color: red;
+      }
+      .contact-sec {
+        height: auto;
+        width: 100%;
+      }
+      .contact-sec h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin: 2rem auto;
+        color: #FFD200;
+        font-family: 'Fredericka the Great', cursive;
+      }
+      .contact-body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+      }
+      .contact-body p,
+      span {
+        color: #ffe;
+      }
+      .contact-body h3 {
+        margin-bottom: 1rem;
+      }
+      .contact-body span {
+        font-size: 1rem;
+      }
+      .contact-body p {
+        display: inline-block;
+        font-weight: 600;
+        font-size: 1.2rem;
+        width: 10rem;
+      }
+      .star {
+        display: block;
+        position: absolute;
+        right: 2%;
+        width: 6rem;
+        top: 20%;
+        z-index: -1;
+      }
+      .star2 {
+        display: block;
+        position: absolute;
+        left: 2%;
+        width: 6rem;
+        top: 10%;
+        z-index: -1;
+      }
+      /*.......................log-in...............*/
+      .log-in {
+        height: auto;
+      }
+      .log-in .flex {
+        display: flex;
+      }
+      #loginformcontainer label {
+        color: #ffe400;
+      }
+      #loginformcontainer input {
+        padding: .8rem 1rem;
+        background: #363636;
+        color: #ffe;
+        background: #2a2c2c;
+        box-shadow: inset 4px 4px 4px #111212, inset -4px -4px 4px #434646;
+      }
+      .log-in h2 {
+        text-align: center;
+        margin: 0 auto 2rem auto;
+        position: relative;
+        width: max-content;
+        font-size: 2.5rem;
+        border-bottom: 2px solid #123;
+        color: #eb5e0b;
+        font-family: 'Fredericka the Great', cursive;
+      }
+      hr {
+        margin: .8rem auto;
+      }
+      .login-text {
+        flex-basis: 50%;
+        font-size: 2rem;
+        text-align: center;
+        display: block;
+        margin: auto auto;
+      }
+      .login-text p {
+        font-family: 'Fredericka the Great', cursive;
+        padding: 0 2rem;
+      }
+      #loginformcontainer {
+        box-shadow: 0px 1px 2px #ffe, 1px 1px 2px #ffe, inset -5px -5px 5px #1e3d59, inset 5px 5px 5px #051131;
+        width: 350px;
+        font-size: 20px;
+        text-align: center;
+        margin: 2rem auto;
+        background-color: #030B2C;
+        padding: 20px;
+        border-radius: 1.5rem;
+        font-family: sans-serif;
+      }
+      #loginformcontainer p {
+        font-size: 1.2rem;
+      }
+      .loginPassword,
+      .loginUsername {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        width: 90%;
+        height: 30px;
+        outline: 0px;
+        border: 0px;
+      }
+      #loginButton {
+        background: #4441e6;
+        color: white;
+      }
+      #loginSignupbutton {
+        background-color: rgb(12, 190, 81);
+        color: white;
+      }
+      #loginButton,
+      #loginSignupbutton {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        border-radius: .2rem;
+        width: 10rem;
+        border: 0;
+        padding: .8rem 1rem;
+        font-size: 1rem;
+        font-weight: 700;
+      }
+      #loginButton:hover {
+        background-color: rgb(0,0,204);
+        color: white;
+        transition: background-color 0.7s;
+      }
+      #loginSignupbutton:hover {
+        opacity: .8;
+      }
+      .error {
+        border: red solid 2px;
+      }
+      #msg {
+        color: red;
+        font-size: 12px;
+        text-align: left;
+        margin-top: -15px;
+        margin-bottom: -10px;
+      }
+      .loginbuttonoff {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+      }
+      /*foter section.....................................*/
+      .footer {
+        bottom: 0;
+        width: 100%;
+        height: auto;
+        padding: 5rem 5rem 4rem 5rem;
+        background-color: rgb(16 16 16);
+        position: relative;
+        box-shadow: 2px 0px 2px 0px #444444;
+      }
+      .footer h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+        color: #ffe;
+        text-shadow: 3px 2px #ff00ff;
+        font-family: 'Fredericka the Great', cursive;
+        position: relative;
+       
+      }
+      .footer p {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #efe;
+      
+     
+      }
+      .footer form div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #1a1c1c;
+        box-shadow: inset 7px 7px 7px #111212, inset -7px -7px 7px #333633;
+        margin-bottom: 1rem;
+        margin: auto;
+        width: 60%;
+        position: relative;
+        height: 4rem;
+        border-radius: 5rem;
+        border: 2px solid #0f0;
+      
+      }
+      .footer input[type="email"] {
+        outline: none;
+        border: 0;
+        background: transparent;
+        display: block;
+        width: 80%;
+        color: #ffe;
+        position: absolute;
+        font-weight: 500;
+        left: 1rem;
+        font-size: 1.2rem;
+       
+      }
+      .footer input[type="submit"] {
+        border: 0;
+        padding: 1.2rem;
+        color: #ffe;
+        border-radius: 4rem;
+        background: var(--btn-bg-clr2);
+        position: absolute;
+        right: .3rem;
+        font-weight: 700;
+        outline: none;
+      }
+      .footer input[type="submit"]:hover {
+        background-color: #130f40;
+        background-image: linear-gradient(315deg, #130f40 0%, #000000 74%);
+        border: 2px solid var(--btn-bg-clr2);
+      }
+      .footer .copyright-text {
+        color: #666666;
+        position: absolute;
+        left: 3rem;
+        bottom: 0rem;
+        font-size: .8rem;
+      }
+      /*footer shapes............................*/
+      .shape-1 {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: #FFD200;
+        position: absolute;
+        top: 20%;
+        left: 2rem;
+        opacity: .6;
+      }
+      .shape-2 {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        background: #00FF99;
+        clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+        position: absolute;
+        top: 10%;
+        right: 0;
+        overflow: hidden;
+        opacity: .6;
+      }
+      .shape:hover {
+        animation: aa 1s linear infinite;
+      }
+      @keyframes aa {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      /*For Cards media*/
+      @media (min-width: 40rem) {
+        .cards_item {
+          width: 50%;
+        }
+      }
+      @media (min-width: 56rem) {
+        .cards_item {
+          width: 33.3333%;
+        }
+      }
+      /*media Query...............................*/
+      @media (max-width: 1000px) {
+        .info-sec h1 {
+          font-style: 2rem;
+        }
+        .banner h1{
+        	font-size: 4rem;
+        }
+      }
+      /*card........................*/
+      @media (min-width: 40rem) {
+        .cards_item {
+          width: 50%;
+        }
+      }
+      @media (min-width: 56rem) {
+        .cards_item {
+          width: 33.3333%;
+        }
+      }
+      /*..............................*/
+      @media (max-width: 800px) {
+        .nav-bar .logo {
+          top: 1.3rem;
+          width: 5.5rem;
+        }
+        .nav-bar {
+          height: 90px;
+        }
+        .nav-bar ul {
+          height: 90px;
+        }
+        .info-sec h1 {
+          font-size: 2rem;
+          margin-top: 2.1rem;
+          margin-bottom: 2.1rem;
+        }
+        .info-sec h1:after {
+          height: .5rem;
+        }
+        .style-text {
+          font-size: 4rem;
+          transform: rotate(-45deg);
+        }
+        .info-sec p {
+          line-height: 1.3rem;
+        }
+        .info-container {
+          flex-direction: column;
+        }
+        .info-container img {
+          width: 70%;
+        }
+        .cont-img img {
+          height: 8rem;
+          width: 8rem;
+          transition: .6s ease-in;
+        }
+        .cont-img img:hover {
+          background:
+        }
+        .log-in .flex {
+          flex-direction: column;
+        }
+        .footer {
+          padding: 2.5rem;
+          position: relative;
+        }
+        .footer input[type="submit"] {
+          padding: .9rem;
+        }
+        .footer input[type="email"] {
+          width: auto;
+          font-size: .9rem;
+          width: 58%;
+        }
+        .footer form div {
+          width: 90%;
+          height: 3.1rem;
+          width: auto;
+        }
+        .footer p {
+          font-size: .85rem;
+        }
+        .footer h1 {
+          font-size: 2rem;
+          margin-bottom: 1.2rem;
+        }
+        .copyright-text {
+          font-size: .5rem;
+        }
+        .shape-1 {
+          height: 2.1rem;
+          width: 2.1rem;
+        }
+        .shape-2 {
+          height: 3rem;
+          width: 3rem;
+        }
+        .banner h1 {
+          font-size: 3.2rem;
+        }
+        .start-tour-btn {
+          width: 13rem;
+        }
+        /*ham-burger*/
+        .nav-bar ul {
+          display: none;
+        }
+        .ham-burger {
+          display: block;
+        }
+        /*.........*/
+        /*clockkk*/
+        .clock {
+          left: 30%;
+          font-size: 1.2rem;
+        }
+      }
+      /*...........................Advanced version media queries..................*/
+      @media (max-width: 700px) {
+      	.banner h1{
+      		font-size: 2.3rem;
+      	}
+        .info-sec p {
+          font-size: .9rem;
+        }
+        .star {
+          width: 3rem;
+        }
+        .star2 {
+          width: 3rem;
+        }
+        .card-sec img:hover {
+          transform: scale(1);
+        }
+        #loginformcontainer {
+          width: 300px;
+        }
+        .log-in h2 {
+          font-size: 2rem;
+        }
+        .login-text {
+          font-size: 1.2rem;
+          text-align: center;
+        }
+        .log-in h2:after {
+          height: .5rem;
+        }
+        .contact-sec span {
+          font-size: .8rem;
+        }
+        .info-sec p {
+          font-size: .9rem;
+        }
+        .info-sec h1 {
+          font-size: 1.5rem;
+        }
+        .card_text {
+          font-size: .9rem;
+        }
+        .card-sec h1 {
+          font-size: 1.5rem;
+        }
+        .footer input[type="submit"] {
+          padding: .7rem;
+        }
+      }
+      @media (max-width: 500px) {
+        .banner h1 {
+          font-size: 2.2rem;
+          padding-top: 9rem;
+        }
+        .shape-1,
+        .shape-2 {
+          display: none;
+        }
+        .info-sec p {
+          text-align: justify;
+        }
+      }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
